@@ -11,4 +11,5 @@ twitter_username: robthereticent
 github_username:  robbystk
 
 # Build settings
-markdown: kramdown
+markdown:       kramdown
+highlighter:    pygments
