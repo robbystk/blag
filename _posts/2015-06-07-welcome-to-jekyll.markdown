@@ -29,6 +29,9 @@ of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub
 repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s 
 dedicated Help repository][jekyll-help].
 
+em dashes: something---other thing.  Holy fuck it works.  RIP my ego 
+1994--2015.  
+
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-help]: https://github.com/jekyll/jekyll-help
