@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      "Vimperator + Reader View"
+date:       2015-06-09 15:34
 ---
 
 Firefox 38.0.5 introduced [Reader View](https://support.mozilla.org/en-US/kb/enjoy-clutter-free-web-pages-reader-view) 
@@ -9,7 +10,7 @@ reading.  I use [vimperator](http://www.vimperator.org/vimperator/) and wanted
 to add a key mapping to quickly go into reader view.  To save others the trouble
 of figuring it out, here's how: 
 
-Basically all the little reader button does is prepend `about:reader?url=` to 
+Basically all the little reader button does is prepend `"about:reader?url="` to 
 the current URL so all we need to do is write a command that does just that. 
 Turns out it's easier said than done.  I hunted through the vimperator 
 documentation, experimenting with copying the URL with `y` (but there's no way 
@@ -34,4 +35,19 @@ map gr :reader<Return>
 
 This can cause strange behavior if you call it on a page that's already in 
 reader mode.  It will get 'stuck' and `H` to go back doesn't work but `2H` will.
-There's probably a way to prevent that; maybe I'll work on it.  
+
+There is a way to prevent this using javascript's conditional operator
+`condition ? expr1 : expr2`.  This evaluates to *`expr1`* if the condition is 
+true and *`expr2`* if the condition is false.  The *`condition`* will be 
+whether we're already in reader view (whether the URL starts with 
+`"about:reader"`), if we are, go back to normal mode (remove the 
+`"about:reader"?url="`, and if not, go to reader mode same as before.  
+Thus: 
+{% highlight vim %}
+:command! reader :execute ((content.location.href.indexOf("about:reader?url=") !== -1) ? ("open " + content.href.substring(17)) : ("open about:reader?url=" + content.location.href))
+:mkvimperatorrc!
+{% endhighlight %}
+or in `.vimperatorrc`: 
+{% highlight vim %}
+command reader :execute ((content.location.href.indexOf("about:reader?url=") !== -1) ? ("open " + content.location.href.substring(17)) : ("open about:reader?url=" + content.location.href))
+{% endhighlight %}
