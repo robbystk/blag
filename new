@@ -1,0 +1,16 @@
+#! /bin/bash
+
+if [[ $# -ne 1 ]]
+then
+    echo "usage: $(basename $0) <title>" >&2
+    exit 1
+fi
+
+title=$(echo "$1" |sed '{
+    s/ /-/g
+    s/[^A-Za-z0-9-]//g
+}')
+
+echo $title
+
+exit 0
