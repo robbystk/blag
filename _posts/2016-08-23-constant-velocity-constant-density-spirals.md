@@ -27,6 +27,6 @@ without jumping to the beginning after every row.
 A different and novel way to achieve this would be a spiral scanning pattern.  
 
 I set out to derive a constant-velocity, constant density spiral.  
-I started with a simple Archimedian spiral \\(r = a + b\theta \\), 
-or in parametric, \\(x = (a + bt)\cos{\omega t}\\), 
-\\(y = (a + bt)\cos{\omega t}\\).  
+I started with a simple Archimedian spiral \\( r = a + b\theta \\), 
+or in parametric, \\( x = (a + bt)\cos{\omega t} \\), 
+\\( y = (a + bt)\cos{\omega t} \\).  
