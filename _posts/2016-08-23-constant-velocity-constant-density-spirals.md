@@ -3,9 +3,6 @@ layout:     post
 title:      "Constant-Velocity, Constant-Density Spirals"
 date:       2015-08-23 23:08
 ---
-\\(
-    \def\ud{\mathrm{d} }
-\\)
 
 In confocal microscopy, a tightly focused illumination beam 
 is scanned rapidly across the sample. 
@@ -36,6 +33,10 @@ or in parametric, \\( x = (r_0 + b\omega t)\cos{\omega t} \\),
 where we have made \\(\theta = \omega t\\). 
 For simplicity, we will condense constants and examine 
 \\[ x = at \cos{\omega t} \\] \\[ y = at \sin{\omega t} \\]
+
+\\(
+    \def\ud{\mathrm{d} }
+\\)
 
 The problem with this is that as the radius increases, 
 the angular velocity \\(\omega\\) stays the same, 
