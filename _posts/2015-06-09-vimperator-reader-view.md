@@ -2,6 +2,7 @@
 layout:     post
 title:      "Vimperator + Reader View"
 date:       2015-06-09 15:34
+comments:   true
 ---
 
 Firefox 38.0.5 introduced [Reader View](https://support.mozilla.org/en-US/kb/enjoy-clutter-free-web-pages-reader-view) 

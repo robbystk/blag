@@ -2,6 +2,7 @@
 layout:     post
 title:      "Constant-Velocity, Constant-Density Spirals"
 date:       2016-08-23 23:08
+comments:   true
 ---
 
 In confocal microscopy, a tightly focused illumination beam 

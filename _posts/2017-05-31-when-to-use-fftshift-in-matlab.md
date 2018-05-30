@@ -2,6 +2,7 @@
 layout:     post
 title:      "When to use FFTshift in MATLAB"
 date:       2017-05-31 20:31
+comments:   true
 ---
 
 After much research and experimentation, I have determined the proper way

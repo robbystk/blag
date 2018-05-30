@@ -2,6 +2,7 @@
 layout:     post
 title:      "Mols of water"
 date:       2017-07-29 12:02
+comments:   true
 ---
 
 According to [USGS](https://water.usgs.gov/edu/earthhowmuch.html),

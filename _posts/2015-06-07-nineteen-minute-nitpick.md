@@ -2,6 +2,7 @@
 layout:     post
 title:      "Nineteen-Minute Nitpick"
 date:       2015-06-07 21:40
+comments:   true
 ---
 
 I recently finished [Nineteen Minutes by Jodi 

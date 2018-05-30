@@ -2,6 +2,7 @@
 layout:     post
 title:      "Give Yourself A Choice"
 date:       2017-07-10 21:26
+comments:   true
 ---
 
 [Louis Rossmann](https://www.youtube.com/user/rossmanngroup)
