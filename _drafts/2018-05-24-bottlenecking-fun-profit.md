@@ -2,7 +2,7 @@
 layout: post
 title:  Bottlenecking for Fun & Profit
 date:   2018-05-24
-categories: machine-learning, writing
+categories: [machine-learning, writing]
 ---
 
 There is a phenomenon/concept/strategy that shows up in optics, data analysis,
