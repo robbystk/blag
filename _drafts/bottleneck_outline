@@ -1,0 +1,17 @@
+- solution to disparate problems is topologically similar
+- PCA or autoencoder
+    - problem: many dimensions; noise
+    - solution: project into low-D, capturing variance
+    - benefits: reduce dimension and noise while maintaining accuracy
+- spatial filter in optics
+    - problem: bumps in spatial mode (which then diffract)
+    - solution: focus light onto pinhole
+    - benefits: removes all except clean gaussian mode
+- writing
+    - problem: jaggedness from repeated revision
+    - solution: compress into brief outline and rewrite completely
+    - benefits:
+        - smoothness and continuity
+        - facilitates reorganization for even better flow
+        - fast because you've already figured it all out
+- Three different problems, one solution.
