@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why Electrical Engineers Are Obsessed With Complex Numbers
+title:  Why Electrical Engineers Are Obsessed With Complex Numbers
 date:   2019-04-14
 ---
 
