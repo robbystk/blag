@@ -1,7 +1,7 @@
 ---
 title:  YouTube Delay Line
 format: post
-date:   2019-02-14 10:06
+date:   2019-05-31 10:06
 ---
 
 I've been reading *Deep Work* by Cal Newport and one of the tenets of his
