@@ -9,5 +9,5 @@ It contains (or ideally would contain) sporadic posts
 on various topics including math, LaTeX, programming, electronics,
 music, books, food, and life.
 
-The author is an electrical engineering PhD student, swing dancer,
-swimmer, and former saxophone player.
+The author is a software developer, swing dancer,
+swimmer, and saxophone player.
