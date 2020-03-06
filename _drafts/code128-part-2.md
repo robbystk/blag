@@ -81,10 +81,80 @@ This back-and-forth can be seen by adding some ~~`printf`~~`println!` debugging
 and observing the output for a string with several sequences
 of letters and digits.
 Below is the output for the payload
-`6 eggs, 25ml water, 1067 grains of rice, and 500g chocolate`
+`1000ml water, 6 eggs, 25ml salt, and 1298426 grains of flour`
 
 ```
-
+parsed token: Digits[1, 0, 0, 0]
+adding 1 to payload
+adding 0 to payload
+adding 0 to payload
+adding 0 to payload
+parsed token: Chars[m, l,  , w, a, t, e, r, ,,  ]
+adding m to payload
+adding l to payload
+adding   to payload
+adding w to payload
+adding a to payload
+adding t to payload
+adding e to payload
+adding r to payload
+adding , to payload
+adding   to payload
+parsed token: Digits[6]
+adding 6 to payload
+parsed token: Chars[ , e, g, g, s, ,,  ]
+adding   to payload
+adding e to payload
+adding g to payload
+adding g to payload
+adding s to payload
+adding , to payload
+adding   to payload
+parsed token: Digits[2, 5]
+adding 2 to payload
+adding 5 to payload
+parsed token: Chars[m, l,  , s, a, l, t, ,,  , a, n, d,  ]
+adding m to payload
+adding l to payload
+adding   to payload
+adding s to payload
+adding a to payload
+adding l to payload
+adding t to payload
+adding , to payload
+adding   to payload
+adding a to payload
+adding n to payload
+adding d to payload
+adding   to payload
+parsed token: Digits[1, 2, 9, 8, 4, 2, 6]
+adding 1 to payload
+adding 2 to payload
+adding 9 to payload
+adding 8 to payload
+adding 4 to payload
+adding 2 to payload
+adding 6 to payload
+parsed token: Chars[ , g, r, a, i, n, s,  , o, f,  , f, l, o, u, r]
+adding   to payload
+adding g to payload
+adding r to payload
+adding a to payload
+adding i to payload
+adding n to payload
+adding s to payload
+adding   to payload
+adding o to payload
+adding f to payload
+adding   to payload
+adding f to payload
+adding l to payload
+adding o to payload
+adding u to payload
+adding r to payload
 ```
 
-The code is [available on github](), go check it out!
+And the resulting payload is `>;`, `10`, `00`, `>6`, `m`, `l`, `` ``, `w`, `a`, `t`, `e`, `r`, `,`, `` ``, `6`, `` ``, `e`, `g`, `g`, `s`, `,`, `` ``, `2`, `5`, `m`, `l`, `` ``, `s`, `a`, `l`, `t`, `,`, `` ``, `a`, `n`, `d`, `` ``, `1`, `>5`, `29`, `84`, `26`, `>6`, `` ``, `g`, `r`, `a`, `i`, `n`, `s`, `` ``, `o`, `f`, `` ``, `f`, `l`, `o`, `u`, `r`,
+
+The code is [available on github](https://github.com/robbystk/code128-encoder),
+go check it out!
