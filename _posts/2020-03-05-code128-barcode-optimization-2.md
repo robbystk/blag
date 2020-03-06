@@ -1,7 +1,7 @@
 ---
 title: "Code 128 Barcode Optimization, Part 2"
 layout: post
-date: 2020-01-18
+date: 2020-03-05
 ---
 
 My [last post](/2019/10/24/code128-barcode-optimization.html) described the code128 barcode format
