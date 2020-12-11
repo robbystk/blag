@@ -2,6 +2,7 @@
 layout: post
 title: Advent of Code 2020 Day 10 Part 2 Generalization
 date: 2020-12-10 13:45 -0700
+comments: true
 ---
 
 I fell down a bit of a rabbit hole after I finished
