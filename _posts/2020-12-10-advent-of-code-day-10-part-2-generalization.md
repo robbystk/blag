@@ -6,7 +6,7 @@ comments: true
 ---
 
 I fell down a bit of a rabbit hole after I finished
-[part 2 of day 10 of Advent of Code][1].
+[part 2 of day 10 of Advent of Code][aoc-10-2].
 My solution broke the problem into several instances
 of a slightly different sub-problem.
 These were simple enough to reason about by hand,
@@ -18,7 +18,7 @@ It bugged me that my solution wasn't general,
 so after solving the puzzle,
 I set out to determine a solution to the sub-problem for all \\(n\\).
 
-[1]: https://adventofcode.com/2020/day/10#part2
+[aoc-10-2]: https://adventofcode.com/2020/day/10#part2
 
 The original puzzle boils down to determining how many ways there are
 to skip some numbers in a strictly increasing sequence of positive integers
@@ -102,7 +102,7 @@ Now consider starting the sum with a 1.
 The rest of the sum needs to be \\(n-1\\), so there are \\(f(n-1)\\)
 ways to construct it.
 If the sum starts with a 2, there are \\(f(n-2)\\),
-and if it starts with a 3, there are \\(f(n-3)\).
+and if it starts with a 3, there are \\(f(n-3)\\).
 Therefore \\(f(n) = f(n-1) + f(n-2) + f(n-3)\\).
 This is similar to the Fibonacci sequence,
 except that we sum the previous three numbers instead of the previous two.
@@ -110,13 +110,13 @@ except that we sum the previous three numbers instead of the previous two.
 It's easy to see that \\(f(0) = 1\\), \\(f(1) = 1\\), and \\(f(2) = 2\\),
 so we can compute \\(f(n)\\) for all \\(n\\).
 The first several values of \\(f(n)\\) are 1, 1, 2, 4, 7, 13, 24, 44 . . .
-Punching these into [The OEIS][2] reveals the name for this sequence:
-[The Tribonacci numbers (OEIS A000073)][3].
+Punching these into [The OEIS][oeis] reveals the name for this sequence:
+[The Tribonacci numbers (OEIS A000073)][tribbonacci].
 The connection to sums of 1s, 2s, and 3s is pointed out by Emeric Deutsch
 in the second comment.
 
-[2]: https://oeis.org/
-[3]: https://oeis.org/A000073
+[oeis]: https://oeis.org/
+[tribbonacci]: https://oeis.org/A000073
 
 From the original problem in Advent of Code day 10 part 2
 we get a family of sub-problems
