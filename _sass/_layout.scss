@@ -18,7 +18,8 @@ header h1 a {
 
 /* body */
 html, body {
-  margin: 0;
+  margin: auto;
+  max-width: 72ch;
   padding: 0;
   background-color: #eee;
   font-family: $sans;
