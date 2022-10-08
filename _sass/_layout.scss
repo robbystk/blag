@@ -12,14 +12,148 @@ header h1 a {
   text-decoration: none
 }
 
+header {
+  // height: 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
 /* menu */
+#menu-toggle {
+  display: none;
+}
 
+#menu-button-container {
+  display: none;
+}
+
+#menu-button {
+  display: none;
+}
+
+#menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+#menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + #menu-button-container{
+  #menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-button::before {
+    transform: rotate(225deg);
+    margin-top: 0px;
+  }
+
+  #menu-button::after {
+    transform: rotate(315deg);
+    margin-top: 0px;
+  }
+}
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+  list-style: none;
+  padding: 0 0.5rem;
+
+  li {
+    height: fit-content;
+    margin: 0px 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: center;
+  }
+
+  #menu-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  #menu-button,
+  #menu-button::before,
+  #menu-button::after, {
+    display: block;
+    position: absolute;
+    background-color: #111;
+    width: 25px;
+    height: 4px;
+    border-radius: 2px;
+    transition-duration: 500ms;
+    transition-property: transform, margin-top
+  }
+
+  #menu {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+
+    li {
+      list-style: none;
+      overflow: hidden;
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 10%;
+      padding-right: 10%;
+      width: 80%;
+      height: 0;
+      background: #fff;
+      transition-duration: 500ms;
+      transition-property: height, padding-top, padding-bottom;
+    }
+  }
+
+  #menu-toggle:checked ~ #menu {
+    li {
+      height: fit-content;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      transition: height, padding-top, padding-bottom 500ms;
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+}
+
+#menu li a {
+  text-decoration: none;
+}
 
 /* body */
 html, body {
   margin: auto;
-  max-width: 72ch;
+  max-width: 80ch;
   padding: 0;
   background-color: #eee;
   font-family: $sans;
