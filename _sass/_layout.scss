@@ -40,14 +40,17 @@ $color-secondary-2-4: #301667;
 :root {
   $hue-primary: 227;
   $hue-secondary: 357;
-  $color-primary: hsl($hue-primary, 35%, 55%);
+  $hue-complementary: 35;
+  $color-primary: hsl($hue-primary, 64%, 56%);
   --color-primary: #{$color-primary};
-  --color-primary-darkened: #{scale-color($color-primary, $lightness: -50%)};
+  --color-primary-dark: #{hsl($hue-primary, 35%, 13%)};
+  --color-primary-light: #{hsl($hue-primary, 35%, 93%)};
   --color-secondary: #{hsl($hue-secondary, 35%, 66%)};
-  --color-light: #{hsl($hue-primary, 35%, 93%)};
-  --color-dark: #{hsl($hue-primary, 35%, 13%)};
-  --color-fg: var(--color-dark);
-  --color-bg: var(--color-light);
+  --color-complementary: #{hsl($hue-complementary, 65%, 55%)};
+  --color-light: #{hsl($hue-primary, 5%, 93%)};
+  --color-dark: #{hsl($hue-primary, 5%, 13%)};
+  --color-fg: var(--color-primary-dark);
+  --color-bg: var(--color-primary-light);
 }
 
 /* header */
@@ -162,6 +165,7 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: stretch;
+    box-shadow: 0px 2px 4px var(--color-dark);
 
     li {
       list-style: none;
@@ -173,9 +177,12 @@ header {
       padding-right: 10%;
       width: 80%;
       height: 0;
-      background-color: var(--color-bg);
+      background-color: var(--color-light);
       transition-duration: 500ms;
       transition-property: height, padding-top, padding-bottom;
+      a {
+        color: var(--color-dark);
+      }
     }
   }
 
@@ -188,7 +195,7 @@ header {
     }
 
     li:not(:last-child) {
-      border-bottom: 1px solid var(--color-primary);
+      border-bottom: 1px solid var(--color-primary-dark);
     }
   }
 }
@@ -208,6 +215,7 @@ header {
       margin-top: 6px;
       a {
         text-decoration: none;
+        color: var(--color-fg);
       }
     }
     p {
@@ -219,8 +227,13 @@ header {
   }
 }
 
+.site-title {
+  color: var(--color-primary);
+}
+
 .home hr {
-  color: var(--color-fg);
+  border: none;
+  border-top: 0.2px solid var(--color-primary-dark);
 }
 
 /* body */
@@ -244,4 +257,8 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: var(--color-primary);
+}
+
+a:hover {
+  text-decoration: none;
 }
