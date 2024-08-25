@@ -3,6 +3,12 @@ $sans: /* */ 'Noto Sans', 'Arial', sans-serif;
 // $serif: /* */ 'Crimson Pro', 'Times New Roman', serif;
 $serif: 'Crimson Pro';
 
+$logo-width: 240px;
+$logo-margin: 24px;
+
+$menu-width: $logo-width + 2 * $logo-margin;
+
+
 /* colors */
 $light-foreground: #111;
 $light-background: #eee;
@@ -92,13 +98,13 @@ a:hover {
 article {
   position: relative;
   width: inherit;
-  margin-right: 336px;
+  margin-right: $menu-width + 48px;
 }
 
 /* menu */
 .nav-wrapper {
   position: absolute;
-  right: 288px;
+  right: $menu-width;
 }
 
 nav {
@@ -110,7 +116,7 @@ nav.floating {
   // display: block;
   z-index: 2;
   position: absolute;
-  width: 288px;
+  width: $menu-width;
 
   .expandable {
     overflow: hidden;
@@ -123,9 +129,9 @@ nav.floating {
 nav a.site-title {
   color: var(--color-primary-light);
   display: block;
-  width: 240px;
+  width: $logo-width;
   padding: 55px 0px 23px 0px;
-  margin: auto 24px;
+  margin: auto $logo-margin;
   text-decoration: none;
   font-family: $serif;
   font-size: 32px;
