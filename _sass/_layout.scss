@@ -99,12 +99,14 @@ article {
   position: relative;
   width: inherit;
   margin-right: $menu-width + 48px;
+  min-width: 30ch;
 }
 
 /* menu */
 .nav-wrapper {
   position: absolute;
   right: $menu-width;
+  top: 0px;
 }
 
 nav {
@@ -117,6 +119,8 @@ nav.floating {
   z-index: 2;
   position: absolute;
   width: $menu-width;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 
   .expandable {
     overflow: hidden;
@@ -135,6 +139,7 @@ nav a.site-title {
   text-decoration: none;
   font-family: $serif;
   font-size: 32px;
+  line-height: 1.1;
 }
 
 #expand-nav-label {
@@ -145,7 +150,7 @@ nav a.site-title {
   text-align: center;
   color: var(--color-primary);
   cursor: pointer;
-  transition: padding 200ms ease, margin 200ms ease, color 200ms ease;
+  transition: color 200ms ease;
 }
 
 #expand-nav-label:hover {
@@ -163,11 +168,15 @@ nav a.site-title {
 
 nav ul {
   list-style: none;
-  padding-left: 0;
   margin: 6px 0 3px 0;
-  padding: 6px 0 4px 24px;
+  padding: 6px 0 4px 12px;
   border-top: solid 1px var(--color-primary);
   // border-bottom: solid 1px var(--color-primary-light);
+
+  li {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
 }
 
 nav a {
@@ -177,4 +186,22 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+/* post list */
+.post-list {
+  padding-left: 0px;
+  list-style: none;
+
+  .post-meta {
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    margin-top: 6px;
+  }
+}
+
+.post-list .post-meta {
+  font-size: 0.8rem
 }
