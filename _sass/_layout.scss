@@ -42,209 +42,28 @@ $color-secondary-2-4: #301667;
   $hue-secondary: 357;
   $hue-complementary: 35;
   $color-primary: hsl($hue-primary, 64%, 56%);
-  --color-primary: #{$color-primary};
-  --color-primary-dark: #{hsl($hue-primary, 35%, 13%)};
-  --color-primary-light: #{hsl($hue-primary, 35%, 93%)};
-  --color-secondary: #{hsl($hue-secondary, 35%, 66%)};
-  --color-complementary: #{hsl($hue-complementary, 65%, 55%)};
-  --color-light: #{hsl($hue-primary, 5%, 93%)};
-  --color-dark: #{hsl($hue-primary, 5%, 13%)};
-  --color-fg: var(--color-primary-dark);
-  --color-bg: var(--color-primary-light);
+  --color-primary: hsl(#{$hue-primary}, 35%, 55%);
+  --color-primary-light: hsl(#{$hue-primary}, 35%, 93%);
+  --color-primary-dark: hsl(#{$hue-primary}, 35%, 13%);
+  --color-primary-saturated: hsl(#{$hue-primary}, 64%, 55%);
+  --color-secondary: hsl(#{$hue-secondary}, 35%, 66%);
+  --color-complementary: hsl(#{$hue-complementary}, 65%, 55%);
+  --color-light: hsl(#{$hue-primary}, 5%, 93%);
+  --color-dark: hsl(#{$hue-primary}, 5%, 13%);
+  --color-fg: var(--color-dark);
+  --color-bg: var(--color-light);
 }
 
-/* header */
-#menu {
-  font-family: $serif;
-}
-
-header h1 a {
-  text-decoration: none
-}
-
-header {
-  // height: 80px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-/* menu */
-#menu-toggle {
-  display: none;
-}
-
-#menu-button-container {
-  display: none;
-}
-
-#menu-button {
-  display: none;
-}
-
-#menu-button::before {
-  content: '';
-  margin-top: -8px;
-}
-
-#menu-button::after {
-  content: '';
-  margin-top: 8px;
-}
-
-#menu-toggle:checked + #menu-button-container{
-  #menu-button {
-    background-color: var(--color-bg);
-  }
-
-  #menu-button::before {
-    transform: rotate(225deg);
-    margin-top: 0px;
-  }
-
-  #menu-button::after {
-    transform: rotate(315deg);
-    margin-top: 0px;
-  }
-}
-
-#menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: fit-content;
-  list-style: none;
-  padding: 0 0.5rem;
-
-  li {
-    height: fit-content;
-    margin: 0px 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 700px) {
-  header {
-    align-items: center;
-  }
-
-  #menu-button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 20px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  #menu-button,
-  #menu-button::before,
-  #menu-button::after, {
-    display: block;
-    position: absolute;
-    background-color: var(--color-fg);
-    width: 25px;
-    height: 4px;
-    border-radius: 2px;
-    transition-duration: 500ms;
-    transition-property: transform, margin-top
-  }
-
-  #menu {
-    position: absolute;
-    top: 80px;
-    left: 0px;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: stretch;
-    box-shadow: 0px 2px 4px var(--color-dark);
-
-    li {
-      list-style: none;
-      overflow: hidden;
-      margin: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: 10%;
-      padding-right: 10%;
-      width: 80%;
-      height: 0;
-      background-color: var(--color-light);
-      transition-duration: 500ms;
-      transition-property: height, padding-top, padding-bottom;
-      a {
-        color: var(--color-dark);
-      }
-    }
-  }
-
-  #menu-toggle:checked ~ #menu {
-    li {
-      height: fit-content;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      transition: height, padding-top, padding-bottom 500ms;
-    }
-
-    li:not(:last-child) {
-      border-bottom: 1px solid var(--color-primary-dark);
-    }
-  }
-}
-
-#menu li a {
-  text-decoration: none;
-}
-
-/* post list */
-.post-list {
-  padding: 0;
-  li {
-    list-style: none;
-    margin: 40px 0;
-    h2 {
-      margin-bottom: 10px;
-      margin-top: 6px;
-      a {
-        text-decoration: none;
-        color: var(--color-fg);
-      }
-    }
-    p {
-      margin: 10px 0;
-    }
-    span {
-      // border: 1px solid;
-    }
-  }
-}
-
-.site-title {
-  color: var(--color-primary);
-}
-
-.home hr {
-  border: none;
-  border-top: 0.2px solid var(--color-primary-dark);
-}
-
-/* body */
+/* base */
 html, body {
-  margin: auto;
-  max-width: 80ch;
-  padding: 0 10px;
-  background-color: var(--color-bg);
+  margin: 0 24px;
+  // max-width: 80ch;
+  // padding: 0 10px;
+  background-color: var(--color-light);
   color: var(--color-fg);
   font-family: $sans;
   font-size: 16px;
+  line-height: 24px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -256,9 +75,100 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-saturated);
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.page {
+  position: relative;
+  width: inherit;
+  max-width: 912px;
+  margin: 0 auto;
+}
+
+article {
+  position: relative;
+  width: inherit;
+  margin-right: 336px;
+}
+
+/* menu */
+.nav-wrapper {
+  position: absolute;
+  right: 288px;
+}
+
+nav {
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-light);
+}
+
+nav.floating {
+  // display: block;
+  z-index: 2;
+  position: absolute;
+  width: 288px;
+
+  .expandable {
+    overflow: hidden;
+    padding: 0 12px;
+    max-height: 0;
+    transition: max-height 1s ease;
+  }
+}
+
+nav a.site-title {
+  color: var(--color-primary-light);
+  display: block;
+  width: 240px;
+  padding: 55px 0px 23px 0px;
+  margin: auto 24px;
+  text-decoration: none;
+  font-family: $serif;
+  font-size: 32px;
+}
+
+#expand-nav-label {
+  border-bottom: none;
+  padding: 0 0 4px 0;
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: padding 200ms ease, margin 200ms ease, color 200ms ease;
+}
+
+#expand-nav-label:hover {
+  color: var(--color-light);
+}
+
+#expand-nav {
+  display: none;
+}
+
+#expand-nav:checked + .expandable {
+  max-height: 150px;
+  overflow: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 6px 0 3px 0;
+  padding: 6px 0 4px 24px;
+  border-top: solid 1px var(--color-primary);
+  // border-bottom: solid 1px var(--color-primary-light);
+}
+
+nav a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
