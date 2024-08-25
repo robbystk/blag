@@ -8,6 +8,8 @@ $logo-margin: 24px;
 
 $menu-width: $logo-width + 2 * $logo-margin;
 
+$narrow-breakpoint: 960px;
+$wide-breakpoint: 1344px;
 
 /* colors */
 $light-foreground: #111;
@@ -114,20 +116,23 @@ nav {
   color: var(--color-primary-light);
 }
 
-nav.floating {
-  // display: block;
-  z-index: 2;
+nav.wide {
+  display: none;
+}
+
+nav.narrow {
+  display: block;
   position: absolute;
   width: $menu-width;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+}
 
-  .expandable {
-    overflow: hidden;
-    padding: 0 12px;
-    max-height: 0;
-    transition: max-height 1s ease;
-  }
+.expandable {
+  overflow: hidden;
+  padding: 0 12px;
+  max-height: 0;
+  transition: max-height 1s ease;
 }
 
 nav a.site-title {
@@ -204,4 +209,29 @@ nav a:hover {
 
 .post-list .post-meta {
   font-size: 0.8rem
+}
+
+/* narrow */
+@media only screen and (max-width: $narrow-breakpoint) {
+  html, body {
+    margin: 0px
+  }
+
+  .page-content {
+    margin: 0px 48px;
+  }
+
+  .nav-wrapper {
+    position: static;
+  }
+
+  nav.narrow {
+    display: block;
+    width: 100%;
+    position: static;
+  }
+
+  nav a.site-title {
+    width: fit-content;
+  }
 }
