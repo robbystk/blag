@@ -65,8 +65,6 @@ $color-secondary-2-4: #301667;
 /* base */
 html, body {
   margin: 0 24px;
-  // max-width: 80ch;
-  // padding: 0 10px;
   background-color: var(--color-light);
   color: var(--color-fg);
   font-family: $sans;
@@ -93,7 +91,6 @@ a:hover {
 .page {
   position: relative;
   width: inherit;
-  max-width: 912px;
   margin: 0 auto;
 }
 
@@ -105,27 +102,13 @@ article {
 }
 
 /* menu */
-.nav-wrapper {
-  position: absolute;
-  right: $menu-width;
-  top: 0px;
-}
-
 nav {
   background-color: var(--color-primary-dark);
   color: var(--color-primary-light);
 }
 
-nav.wide {
-  display: none;
-}
-
 nav.narrow {
-  display: block;
-  position: absolute;
-  width: $menu-width;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  display: none;
 }
 
 .expandable {
@@ -138,9 +121,6 @@ nav.narrow {
 nav a.site-title {
   color: var(--color-primary-light);
   display: block;
-  width: $logo-width;
-  padding: 55px 0px 23px 0px;
-  margin: auto $logo-margin;
   text-decoration: none;
   font-family: $serif;
   font-size: 32px;
@@ -209,6 +189,37 @@ nav a:hover {
 
 .post-list .post-meta {
   font-size: 0.8rem
+}
+
+/* regular */
+@media only screen and (max-width: $wide-breakpoint) {
+  nav a.site-title {
+    width: $logo-width;
+    padding: 55px 0px 23px 0px;
+    margin: auto $logo-margin;
+  }
+
+  .nav-wrapper {
+    position: absolute;
+    right: $menu-width;
+    top: 0px;
+  }
+
+  .page {
+    max-width: 912px;
+  }
+
+  nav.wide {
+    display: none;
+  }
+
+  nav.narrow {
+    display: block;
+    position: absolute;
+    width: $menu-width;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
 }
 
 /* narrow */
