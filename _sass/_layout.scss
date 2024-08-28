@@ -46,18 +46,18 @@ $color-secondary-2-4: #301667;
 // another way to do it:
 // from hazelweakly.me
 :root {
-  $hue-primary: 227;
-  $hue-secondary: 357;
-  $hue-complementary: 35;
-  $color-primary: hsl($hue-primary, 64%, 56%);
-  --color-primary: hsl(#{$hue-primary}, 35%, 55%);
-  --color-primary-light: hsl(#{$hue-primary}, 35%, 93%);
-  --color-primary-dark: hsl(#{$hue-primary}, 35%, 13%);
-  --color-primary-saturated: hsl(#{$hue-primary}, 64%, 55%);
-  --color-secondary: hsl(#{$hue-secondary}, 35%, 66%);
-  --color-complementary: hsl(#{$hue-complementary}, 65%, 55%);
-  --color-light: hsl(#{$hue-primary}, 5%, 93%);
-  --color-dark: hsl(#{$hue-primary}, 5%, 13%);
+  $oklch-hue-primary: 259;
+  $oklch-hue-secondary: 169;
+  $oklch-hue-complementary: 82;
+
+  --color-primary: oklch(40% 0.13 #{$oklch-hue-primary});
+  --color-secondary: oklch(70% 0.125 #{$oklch-hue-secondary});
+  --color-complementary: oklch(80% 0.126 #{$oklch-hue-complementary});
+  --color-primary-light: oklch(70% 0.125 #{$oklch-hue-primary});
+  --color-primary-dark: oklch(30% 0.02 #{$oklch-hue-primary});
+  --color-primary-saturated: oklch(60% 0.125 #{$oklch-hue-primary});
+  --color-light: oklch(93% 0.01 #{$oklch-hue-primary});
+  --color-dark: oklch(25% 0.02 #{$oklch-hue-primary});
   --color-fg: var(--color-dark);
   --color-bg: var(--color-light);
 }
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--color-primary-saturated);
+  color: var(--color-primary);
 }
 
 a:hover {
@@ -103,8 +103,8 @@ article {
 
 /* menu */
 nav {
-  background-color: var(--color-primary-dark);
-  color: var(--color-primary-light);
+  background-color: var(--color-primary);
+  color: var(--color-light);
 }
 
 nav.narrow {
@@ -119,7 +119,7 @@ nav.narrow {
 }
 
 nav a.site-title {
-  color: var(--color-primary-light);
+  color: var(--color-light);
   display: block;
   text-decoration: none;
   font-family: $serif;
@@ -133,7 +133,7 @@ nav a.site-title {
   display: block;
   font-size: 24px;
   text-align: center;
-  color: var(--color-primary);
+  color: var(--color-complementary);
   cursor: pointer;
   transition: color 200ms ease;
 }
@@ -155,7 +155,7 @@ nav ul {
   list-style: none;
   margin: 6px 0 3px 0;
   padding: 6px 0 4px 12px;
-  border-top: solid 1px var(--color-primary);
+  border-top: solid 1px var(--color-complementary);
   // border-bottom: solid 1px var(--color-primary-light);
 
   li {
@@ -165,7 +165,7 @@ nav ul {
 }
 
 nav a {
-  color: var(--color-primary-light);
+  color: var(--color-light);
   text-decoration: none;
 }
 
