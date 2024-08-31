@@ -47,19 +47,27 @@ $color-secondary-2-4: #301667;
 // from hazelweakly.me
 :root {
   $oklch-hue-primary: 259;
-  $oklch-hue-secondary: 169;
+  $oklch-hue-secondary: 8;
   $oklch-hue-complementary: 82;
 
   --color-primary: oklch(40% 0.13 #{$oklch-hue-primary});
-  --color-secondary: oklch(70% 0.125 #{$oklch-hue-secondary});
+  --color-secondary: oklch(65% 0.18 #{$oklch-hue-secondary});
   --color-complementary: oklch(80% 0.126 #{$oklch-hue-complementary});
   --color-primary-light: oklch(70% 0.125 #{$oklch-hue-primary});
-  --color-primary-dark: oklch(30% 0.02 #{$oklch-hue-primary});
-  --color-primary-saturated: oklch(60% 0.125 #{$oklch-hue-primary});
+  // --color-primary-dark: oklch(30% 0.02 #{$oklch-hue-primary});
+  // --color-primary-saturated: oklch(60% 0.125 #{$oklch-hue-primary});
+  --color-secondary-light: oklch(95% 0.025 #{$oklch-hue-secondary});
   --color-light: oklch(93% 0.01 #{$oklch-hue-primary});
+  --color-light-shade: oklch(90% 0.02 #{$oklch-hue-primary});
   --color-dark: oklch(25% 0.02 #{$oklch-hue-primary});
+  // --color-dark-glare: oklch(30% 0.02 #{$oklch-hue-primary});
   --color-fg: var(--color-dark);
   --color-bg: var(--color-light);
+  --color-bg-muted: var(--color-light-shade);
+}
+
+:root {
+  --color-highlight-bg: var(--color-bg);
 }
 
 /* base */
@@ -99,6 +107,24 @@ article {
   width: inherit;
   margin-right: $menu-width + 48px;
   min-width: 30ch;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+pre.highlight {
+  background-color: var(--color-bg-muted);
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+p code {
+  // border: 1px solid var(--color-secondary);
+  border-radius: 0.2rem;
+  padding: 1px 2px;
+  color: var(--color-secondary);
+  background-color: var(--color-secondary-light);
 }
 
 /* menu */
