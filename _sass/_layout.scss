@@ -227,7 +227,7 @@ nav {
 @media only screen and (max-width: $wide-breakpoint) {
   .nav-wrapper {
     position: absolute;
-    right: $menu-width;
+    left: 0px;
     top: 0px;
   }
 
@@ -269,7 +269,7 @@ nav {
   }
 
   article {
-    margin-right: $menu-width + 48px;
+    margin-left: $menu-width + 48px;
   }
 }
 
