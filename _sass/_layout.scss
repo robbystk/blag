@@ -136,10 +136,6 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  &.narrow {
-    display: none;
-  }
-
   a.site-title {
     color: var(--color-light);
     display: block;
@@ -174,35 +170,8 @@ nav {
   }
 }
 
-.expandable {
-  overflow: hidden;
-  padding: 0 12px;
-  max-height: 0;
-  transition: max-height 1s ease;
-}
-
-#expand-nav-label {
-  border-bottom: none;
-  padding: 0 0 4px 0;
-  display: block;
-  font-size: 24px;
-  text-align: center;
-  color: var(--color-complementary);
-  cursor: pointer;
-  transition: color 200ms ease;
-}
-
-#expand-nav-label:hover {
-  color: var(--color-light);
-}
-
-#expand-nav {
-  display: none;
-}
-
-#expand-nav:checked + .expandable {
-  max-height: 400px;
-  overflow: auto;
+#expand-nav-label, #expand-nav {
+  display: none,
 }
 
 /* post list */
@@ -225,29 +194,20 @@ nav {
 
 /* regular */
 @media only screen and (max-width: $wide-breakpoint) {
-  .nav-wrapper {
+  nav {
+    display: block;
     position: absolute;
     left: 0px;
     top: 0px;
-  }
+    padding: 0px;
+    width: $menu-width;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 
-  nav {
     a.site-title {
       width: $logo-width;
       padding: 55px 0px 23px 0px;
       margin: auto $logo-margin;
-    }
-
-    &.wide {
-      display: none;
-    }
-
-    &.narrow {
-      display: block;
-      position: absolute;
-      width: $menu-width;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
     }
 
     ul {
@@ -262,6 +222,37 @@ nav {
         margin-bottom: 6px;
       }
     }
+  }
+
+  #expand-nav-label {
+    border-bottom: none;
+    padding: 0 0 4px 0;
+    display: block;
+    font-size: 24px;
+    text-align: center;
+    color: var(--color-complementary);
+    cursor: pointer;
+    transition: color 200ms ease;
+  }
+
+  #expand-nav-label:hover {
+    color: var(--color-light);
+  }
+
+  #expand-nav {
+    display: none;
+  }
+
+  #expand-nav:checked + .expandable {
+    max-height: 400px;
+    overflow: auto;
+  }
+
+  .expandable {
+    overflow: hidden;
+    padding: 0 12px;
+    max-height: 0;
+    transition: max-height 1s ease;
   }
 
   .page {
@@ -287,11 +278,7 @@ nav {
     margin: 0px;
   }
 
-  .nav-wrapper {
-    position: static;
-  }
-
-  nav.narrow {
+  nav {
     display: block;
     width: 100%;
     position: static;
