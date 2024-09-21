@@ -1,6 +1,6 @@
 ---
 title:  YouTube Delay Line
-format: post
+layout: post
 date:   2019-05-31 10:06
 ---
 
