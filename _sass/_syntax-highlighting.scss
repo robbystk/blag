@@ -2,8 +2,8 @@
  * Syntax highlighting styles
  */
 .highlight {
-    background: #fff;
-    @extend %vertical-rhythm;
+    background: var(--color-highlight-bg);
+    // @extend %vertical-rhythm;
 
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: #a61717; background-color: #e3d2d2 } // Error

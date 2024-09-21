@@ -5,15 +5,26 @@
 
   <body>
 
-    {% include header.html %}
+    <nav>
+      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <label id="expand-nav-label" for="expand-nav">≡</label>
+      <input id="expand-nav" type="checkbox"/>
+      <div class="expandable">
+        <ul class="menu">
+          {% for page in site.pages %}
+            {% if page.title %}
+            <li><a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
 
     <div class="page-content">
-      <div class="wrapper">
+      <article class="content">
         {{ content }}
-      </div>
+      </article>
     </div>
-
-    {% include footer.html %}
 
   </body>
 
